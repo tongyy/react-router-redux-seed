@@ -1,19 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { increase, decrease } from '../actions/count'
+import { increase, decrease, incrementAsync } from '../actions/count'
 
-function Home({ number, increase, decrease }) {
+function Home({ number, increase, decrease ,incrementAsync}) {
+  console.log(this);
   return (
     <div>
       Some state changes:
       {number}
       <button onClick={() => increase(1)}>Increase</button>
       <button onClick={() => decrease(1)}>Decrease</button>
+      <button onClick={() => incrementAsync(1)}>IncreaseAsync</button>
     </div>
   )
 }
 
 export default connect(
   state => ({ number: state.count.number }),
-  { increase, decrease }
+  { increase, decrease, incrementAsync}
 )(Home)

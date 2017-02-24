@@ -1,4 +1,5 @@
-import { INCREASE, DECREASE } from '../constants'
+const INCREASE = 'INCREASE'
+const DECREASE = 'DECREASE'
 
 export function increase(n) {
   return {
@@ -13,3 +14,13 @@ export function decrease(n) {
     amount: n
   }
 }
+
+export function incrementAsync() {
+  return dispatch => {
+    setTimeout(() => {
+
+      dispatch(increase(1));
+    }, 1000);
+  };
+}
+
