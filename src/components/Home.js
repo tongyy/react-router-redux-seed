@@ -8,8 +8,8 @@ export default class Home extends Component {
 	componentWillMount() {
 		console.log('componentWillMount');
 	}
-	
-	render(){
+
+	render() {
 		console.log(this);
 		return (
 			<div>
