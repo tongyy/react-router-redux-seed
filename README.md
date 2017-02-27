@@ -31,7 +31,7 @@ npm start
 
 * Run JEST for testing
 
-```shell
+```none
 npm test
 ```
 
