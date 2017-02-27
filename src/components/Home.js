@@ -1,20 +1,25 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { increase, decrease, incrementAsync } from '../actions/count';
+import React,{Component} from 'react';
 
-function Home({ number, increase, decrease ,incrementAsync}) {
-	return (
-		<div>
-			Some state changes:
-			{number}
-			<button onClick={() => increase(1)}>Increase</button>
-			<button onClick={() => decrease(1)}>Decrease</button>
-			<button onClick={() => incrementAsync(1)}>IncreaseAsync</button>
-		</div>
-	);
-}
+export default class Home extends Component {
+	constructor(props) {
+		super(props);
+	}
 
-export default connect(
-	state => ({ number: state.get('count').get('number') }),
-	{ increase, decrease, incrementAsync}
-)(Home);
+	componentWillMount() {
+		console.log('componentWillMount');
+	}
+	
+	render(){
+		console.log(this);
+		return (
+			<div>
+				Some state changes:
+				{this.props.data.get('count').get('number')}
+				<button onClick={() => this.props.increaseNum(1)}>Increase</button>
+				<button onClick={() => this.props.decreaseNum(1)}>Decrease</button>
+				<button onClick={() => this.props.increaseAsyncNum(1)}>IncreaseAsync</button>
+			</div>
+		);
+	}
+};
+

@@ -12,7 +12,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 import * as reducers from './reducers';
-import { App, Home, Foo, Bar } from './components';
+import { App, About} from './components';
+import {HomeContainer}	from './containers';
 import ReduxThunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
@@ -44,9 +45,8 @@ ReactDOM.render(
 		<div>
 			<Router history={history}>
 				<Route path="/" component={App}>
-					<IndexRoute component={Home}/>
-					<Route path="foo" component={Foo}/>
-					<Route path="bar" component={Bar}/>
+					<IndexRoute component={HomeContainer}/>
+					<Route path="about" component={About}/>
 				</Route>
 			</Router>
 			<DevTools />
