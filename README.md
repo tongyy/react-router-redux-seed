@@ -12,6 +12,7 @@ Redux-Thunk,
 Webpack,
 Babel, 
 ECMAScript6, 
+Redux-Devtools,
 ESlint,
 JEST
 
