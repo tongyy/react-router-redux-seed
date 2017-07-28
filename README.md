@@ -1,4 +1,7 @@
-# react-router-redux-seed
+# react-router-redux-seed 
+
+[![Build Status](https://travis-ci.org/tongyy/react-router-redux-seed.svg?branch=master)](https://travis-ci.org/tongyy/react-router-redux-seed)
+
 Seed project for react-router-redux apps. 
 
 ##Keywords 
