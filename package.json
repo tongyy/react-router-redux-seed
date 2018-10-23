@@ -33,15 +33,15 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "immutable": "^3.8.1",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-redux": "^4.3.0",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.8",
     "redux": "^3.2.1",
     "redux-immutable": "^3.1.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "immutable": "^3.8.1"
   },
   "scripts": {
     "start": "webpack-dev-server --inline --content-base .",
