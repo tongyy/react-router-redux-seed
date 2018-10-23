@@ -30,21 +30,21 @@ class ToDoList extends Component {
 
 	render() {
 		return (
-		<div>
-			<form onSubmit={this.handleSubmit}>
-				<label>
-					<input type="text" value={this.state.value} onChange={this.handleChange} />
-				</label>
-				<input onClick={this.handleSubmit}type="submit" value="Submit" />
-			</form>
-			<ul>
-				{this.state.list.map(function(i, index) {
-					return(
-						<li key={index}>{i}<button onClick={this.handleSubmit.bind(this)}>X</button></li>
-					);
-				})}
-			</ul>
-			<p>Remaining: {this.state.list.length}</p>
+			<div>
+				<form onSubmit={this.handleSubmit}>
+					<label>
+						<input type="text" value={this.state.value} onChange={this.handleChange} />
+					</label>
+					<input onClick={this.handleSubmit}type="submit" value="Submit" />
+				</form>
+				<ul>
+					{this.state.list.map(function(i, index) {
+						return(
+							<li key={index}>{i}<button onClick={this.handleSubmit.bind(this)}>X</button></li>
+						);
+					})}
+				</ul>
+				<p>Remaining: {this.state.list.length}</p>
 			</div>
 		);
 	}
