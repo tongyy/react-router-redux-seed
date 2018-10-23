@@ -3,10 +3,23 @@ module.exports = {
     output: {
         filename: './static/bundle.js'       
     },
-    resolve: {
-        extensions: ['', '.js', '.jsx', 'index.js', 'index.jsx', '.json', 'index.json']
-    }, 
+	mode:"development",
     module: {
+		rules: [
+		  {
+			test: /\.js$/,
+			exclude: /node_modules/,
+			use: [{
+			  loader: "babel-loader",
+			  options: {
+				  presets: [
+					['@babel/preset-env']
+				  ]
+              }
+			}]
+		  }
+		]
+		/*
         preLoaders: [
             { test: /\.json$/, loader: "json-loader" }
             ],
@@ -28,5 +41,6 @@ module.exports = {
                 loader: "html"
             }
         ]
+		*/
     },
 };
