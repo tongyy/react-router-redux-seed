@@ -6,10 +6,11 @@ import Immutable from 'immutable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose} from 'redux';
-import {combineReducers} from 'redux-immutable';
+import { combineReducers } from 'redux-immutable';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import { Route, Switch } from 'react-router'; // react-router v4
+import history from './history';
+import { connectRouter, routerMiddleware, ConnectedRouter } from 'connected-react-router/immutable';
 
 import * as reducers from './reducers';
 import { App, About} from './components';
@@ -17,8 +18,7 @@ import {HomeContainer}	from './containers';
 import ReduxThunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-	...reducers,
-	routing: routerReducer
+	...reducers	
 });
 
 const DevTools = createDevTools(
@@ -28,29 +28,26 @@ const DevTools = createDevTools(
 );
 
 const store = createStore(
-	rootReducer,
+	connectRouter(history)(rootReducer),
 	compose(
-		applyMiddleware(ReduxThunk),
+		applyMiddleware(ReduxThunk,routerMiddleware(history)),
 		DevTools.instrument()
 	)
 );
-const history = syncHistoryWithStore(browserHistory, store, {
-	selectLocationState (state) {
-		return state.get('routing');
-	}
-});
 
 ReactDOM.render(
 	<Provider store={store}>
-		<div>
-			<Router history={history}>
-				<Route path="/" component={App}>
-					<IndexRoute component={HomeContainer}/>
-					<Route path="about" component={About}/>
-				</Route>
-			</Router>
-			<DevTools />
-		</div>
+		<ConnectedRouter history={history}>
+			<div>
+					<Route exact path="/" component={App}/>
+					<Route exact path="/" component={HomeContainer}/>
+				<Switch>
+					<Route path="/home" component={HomeContainer}/>
+					<Route path="/about" component={About}/>
+				</Switch>
+				<DevTools />
+			</div>
+		</ConnectedRouter>
 	</Provider>,
 	document.getElementById('app')
 );

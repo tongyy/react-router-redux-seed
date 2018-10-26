@@ -21,19 +21,21 @@
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.4",
     "webpack": "^4.22.0",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.1.10",
+    "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "immutable": "^3.8.1",
+    "connected-react-router": "^4.5.0",
+    "history": "^4.7.2",
+    "immutable": "^3.8.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^4.3.0",
-    "react-router": "^3.0.2",
-    "react-router-redux": "^4.0.8",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "redux": "^3.2.1",
-    "redux-immutable": "^3.1.0",
-    "redux-thunk": "^2.2.0",
-    "webpack-cli": "^3.1.2"
+    "redux-immutable": "^4.0.0",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "webpack-dev-server --inline --content-base .",
