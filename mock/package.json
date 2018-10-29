@@ -1,0 +1,13 @@
+{
+  "name": "mock",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "webpack": "^4.22.0",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --inline --content-base . --port 8081"
+  }
+}

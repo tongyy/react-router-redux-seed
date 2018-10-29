@@ -5,10 +5,6 @@ export default class Home extends Component {
 		super(props);
 	}
 
-	componentWillMount() {
-		console.log('componentWillMount');
-	}
-
 	render() {
 		console.log(this);
 		return (

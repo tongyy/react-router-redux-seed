@@ -3,6 +3,7 @@ module.exports = {
     output: {
         filename: './static/bundle.js'       
     },
+	devtool: 'sourcemaps',
 	mode:"development",
     module: {
 		rules: [
@@ -19,28 +20,5 @@ module.exports = {
 			}]
 		  }
 		]
-		/*
-        preLoaders: [
-            { test: /\.json$/, loader: "json-loader" }
-            ],
-            loaders: [
-            { test: /\.css$/, loader: "style!css" },
-            { 
-                test: /\.js$/,         // Match both .js and .jsx files
-                exclude: /node_modules/, 
-                loader: "babel-loader", 
-                query:
-                {   
-                    plugins: ['lodash'],
-                    presets:['react','es2015','stage-1']
-
-                }
-            },
-            {
-                test: /\.html$/,
-                loader: "html"
-            }
-        ]
-		*/
     },
 };
