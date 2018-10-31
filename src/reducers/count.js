@@ -6,6 +6,7 @@ const initialState = Immutable.fromJS({
 });
 
 export default function update(state = initialState, action) {
+	console.log("update by count reduce",action);
 	if(action.type === INCREASE) {
 		console.log('update',state);
 		return state.update('number',v => v + action.amount);
